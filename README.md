@@ -1,4 +1,5 @@
-Introduction
+**Introduction**
+
 This app pulls artist data from the Deezer music database.
 
 A user can:
