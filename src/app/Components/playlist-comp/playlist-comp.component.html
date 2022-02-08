@@ -1,0 +1,45 @@
+<div class="tracklist">
+  <h1>Albums</h1>
+  <ng-container *ngIf="albums; then albumLoaded; else notAlbumLoaded">
+  </ng-container>
+
+  <ng-template #albumLoaded>
+    <div class="album-container">
+      <ng-container *ngFor="let album of albums">
+        <div class="album-card">
+          <div class="album-cover">
+            <img src="{{ album.cover_big }}" />
+          </div>
+          <div>
+            <h2>{{ album.title }}</h2>
+            <h3>{{ album.release_date | date: "yyyy" }}</h3>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </ng-template>
+
+  <ng-template #notAlbumLoaded>
+    <!-- <app-loading></app-loading> -->
+  </ng-template>
+</div>
+
+<ng-container *ngIf="tracks; then tracksLoaded"> </ng-container>
+
+<ng-template #tracksLoaded>
+  <div class="tracklist">
+    <h1>Top tracks</h1>
+    <ol>
+      <ng-container *ngFor="let track of tracks">
+        <ng-container *ngIf="track; then trackLoaded"> </ng-container>
+
+        <ng-template #trackLoaded>
+          <li>
+            <h4>{{ track.title }}</h4>
+            <h5>{{ track.duration }}</h5>
+          </li>
+        </ng-template>
+      </ng-container>
+    </ol>
+  </div>
+</ng-template>

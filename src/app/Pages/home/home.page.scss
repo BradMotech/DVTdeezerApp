@@ -1,0 +1,139 @@
+ion-content {
+  --background: #fff;
+  font-family: "Avenirheavy" !important;
+
+  .album-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .album-card {
+      width: 300px;
+      margin-right: 1%;
+      border-radius: 8px;
+
+      .album-cover {
+        img {
+          width: 300px;
+        }
+      }
+
+      h2,
+      h3 {
+        margin: 0px;
+      }
+
+      h2 {
+        color: #141414;
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        color: #000;
+        margin-bottom: 20px;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .tracklist {
+    padding: 20px;
+
+    h1 {
+      margin: 10px 0px 0px 20px;
+      font-size: 2rem;
+    }
+
+    ol {
+      color: #000;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.album-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  .album-card {
+    width: 300px;
+    margin-right: 1%;
+    border-radius: 8px;
+    border-width: 00.2rem;
+    border-color: #141414;
+
+    .album-cover {
+      img {
+        width: 300px;
+      }
+    }
+
+    h2,
+    h3 {
+      margin: 0px;
+    }
+
+    h2 {
+      color: #141414;
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      color: #000;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+  }
+}
+
+.tracklist {
+  padding: 20px;
+
+  h1 {
+    margin: 10px 0px 0px 20px;
+    font-size: 2rem;
+  }
+
+  ol {
+    color: #000;
+    font-size: 1.2rem;
+  }
+}
+ion-toolbar,
+ion-header {
+  --min-height: 90px;
+  --background: linear-gradient(57.8deg, #6b42b4 9.75%, #943aab 95.44%);
+  box-shadow: 0px -2px 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+ion-icon {
+  color: #fff;
+}
+fa-icon {
+  font-size: 18px;
+  color: #fff;
+}
+
+ion-buttons {
+  height: 80px;
+}
+ion-button {
+  ion-badge {
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.1rem;
+    right: 0.2rem;
+    opacity: 0.9;
+    color: #fff;
+
+    & ~ ion-icon {
+      margin-right: 1.2rem;
+    }
+  }
+}
+fa-icon {
+  font-size: 18px;
+  color: #fff;
+}

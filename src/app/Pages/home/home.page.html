@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="secondary">
+      <ng-container *ngIf="icon == 'home'; else elseTemplate">
+        <ion-button>
+          <!-- <img src="https://image.pngaaa.com/708/69708-small.png" /> -->
+        </ion-button>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <ion-button (click)="headback()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            aria-hidden="true"
+            role="img"
+            width="2em"
+            height="2em"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 512 512"
+          >
+            <path
+              fill="none"
+              stroke="white"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="48"
+              d="M328 112L184 256l144 144"
+            />
+          </svg>
+        </ion-button>
+      </ng-template>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="SearchPlaylist()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          role="img"
+          width="2em"
+          height="2em"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.53 15.59a8.25 8.25 0 1 1 1.06-1.06l5.69 5.69a.75.75 0 1 1-1.06 1.06l-5.69-5.69zM2.5 9.25a6.75 6.75 0 1 1 11.74 4.547a.746.746 0 0 0-.443.442A6.75 6.75 0 0 1 2.5 9.25z"
+            fill="white"
+          />
+        </svg>
+      </ion-button>
+    </ion-buttons>
+    <ion-input
+      style="color: #fff"
+      [(ngModel)]="SearchInput"
+      placeholder="Search by artist name"
+    ></ion-input>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="padding-top: 33px">
+  <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start">
+    <div
+      class="tracklist"
+      fxLayout="row wrap"
+      fxLayoutGap="1em"
+      fxLayoutAlign="start"
+    >
+      <h1 style="margin-bottom: 18px">Welcome to Deezer</h1>
+
+      <ng-container *ngFor="let artist of Artists">
+        <div class="album-container">
+          <ng-container>
+            <div class="album-card" (click)="goPlaylist(artist.id)">
+              <div class="album-cover">
+                <img src="{{ artist.picture }}" />
+              </div>
+              <div>
+                <h2>{{ artist.name }}</h2>
+                <h3>No Fans : {{ artist.nb_fan }}</h3>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ion-content>
